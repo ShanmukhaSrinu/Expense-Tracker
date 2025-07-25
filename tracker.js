@@ -9,6 +9,11 @@ document.getElementById("add-button").addEventListener("click", () => {
     let amount = document.getElementsByClassName("amountinput")[0].value
     let transaction = document.getElementsByClassName("transactioninput")[0].value
 
+    if (parseInt(amount) <= 0) {
+    alert("Amount must be a positive number.");
+    return;
+}
+
     if (!date || !amount || transaction === "Transaction Type") {
         alert("Please fill all fields correctly.");
         return;
